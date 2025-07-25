@@ -34,9 +34,7 @@ def train_and_save_model(
     print(data['sentiment'].value_counts())
 
     # Vectoriztion
-    vectorizer=TfidfVectorizer(max_features=10000,
-        stop_words='english',
-        ngram_range=(1, 2))
+    vectorizer=TfidfVectorizer()
     x=vectorizer.fit_transform(data['cleaned_review'])
     y=data['sentiment']
 
