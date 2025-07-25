@@ -17,44 +17,44 @@ def clean_text(text):
     text=text.strip()
     return text
 
-# def train_and_save_model(
-#         dataset_path: str="IMDB_Dataset.csv",
-#         model_path: str="model.pkl",
-#         vectorizer_path: str="vectorizer.pkl"
-# ):
+def train_and_save_model(
+        dataset_path: str="IMDB_Dataset.csv",
+        model_path: str="model.pkl",
+        vectorizer_path: str="vectorizer.pkl"
+):
   
-#     data=pd.read_csv(dataset_path)
-#     # print(data.describe())
-#     # print(data.info())
-#     # print(data.isnull().sum()) # gives how muh null values are in each column
+    data=pd.read_csv(dataset_path)
+    # print(data.describe())
+    # print(data.info())
+    # print(data.isnull().sum()) # gives how muh null values are in each column
 
-#     data['sentiment']=data['sentiment'].map({'positive':1,'negative':0})
-#     data['cleaned_review']=data['review'].apply(clean_text)
+    data['sentiment']=data['sentiment'].map({'positive':1,'negative':0})
+    data['cleaned_review']=data['review'].apply(clean_text)
 
-#     print(data['sentiment'].value_counts())
+    print(data['sentiment'].value_counts())
 
-#     # Vectoriztion
-#     vectorizer=TfidfVectorizer()
-#     x=vectorizer.fit_transform(data['cleaned_review'])
-#     y=data['sentiment']
+    # Vectoriztion
+    vectorizer=TfidfVectorizer()
+    x=vectorizer.fit_transform(data['cleaned_review'])
+    y=data['sentiment']
 
-#     # Train test split
-#     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
+    # Train test split
+    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
 
-#     # Model Tuning
-#     model=LogisticRegression()
-#     model.fit(x_train,y_train)
+    # Model Tuning
+    model=LogisticRegression()
+    model.fit(x_train,y_train)
 
-#     #Prediction
-#     y_predicted=model.predict(x_test)
+    #Prediction
+    y_predicted=model.predict(x_test)
 
-#     # Accuracy Score wth class weights
-#     print("Accuracy: ",accuracy_score(y_true=y_test,y_pred=y_predicted))
-#     print("Classification Report:\n",classification_report(y_test,y_predicted))
-#     print("Confusion Matrix\n",confusion_matrix(y_test,y_predicted))
+    # Accuracy Score wth class weights
+    print("Accuracy: ",accuracy_score(y_true=y_test,y_pred=y_predicted))
+    print("Classification Report:\n",classification_report(y_test,y_predicted))
+    print("Confusion Matrix\n",confusion_matrix(y_test,y_predicted))
 
-#     joblib.dump(model,model_path)
-#     joblib.dump(vectorizer,vectorizer_path)
+    joblib.dump(model,model_path)
+    joblib.dump(vectorizer,vectorizer_path)
     
 
 @lru_cache(maxsize=1)
@@ -75,5 +75,5 @@ def predict_sentiment(text):
     
     return "Positive" if prediction == 1 else "Negative"
 
-# if __name__=="__main__":
-#     train_and_save_model()
+if __name__=="__main__":
+    train_and_save_model()
