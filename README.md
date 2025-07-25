@@ -6,7 +6,7 @@ A sleek, AI-powered web app that classifies movie reviews as **Positive 😊** o
 
 ## ✨ Demo
 
-> **[Live Demo on Streamlit Cloud](https://your-streamlit-cloud-link.com)**  
+> **[Live Demo on Streamlit Cloud](https://sentiment-analyzer-ecfjwmegjcauwz9w9ffwfy-parthmendiratta.streamlit.app/)**  
 
 ---
 
