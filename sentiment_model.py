@@ -57,6 +57,7 @@ def train_and_save_model(
 
     joblib.dump(model,model_path)
     joblib.dump(vectorizer,vectorizer_path)
+    
 
 @lru_cache(maxsize=1)
 def _load_artifacts(model_path="model.pkl",vectorizer_path="vectorizer.pkl"):
