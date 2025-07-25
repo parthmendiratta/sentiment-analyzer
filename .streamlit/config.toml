@@ -1,0 +1,7 @@
+[theme]
+base="light"
+primaryColor="#2196f3"  # Sky Blue
+backgroundColor="#e3f2fd"
+secondaryBackgroundColor="#ffffff"
+textColor="#1a237e"
+font="sans serif"
