@@ -74,5 +74,5 @@ def predict_sentiment(text):
     
     return "Positive" if prediction == 1 else "Negative"
 
-if __name__=="__main__":
-    train_and_save_model()
+# if __name__=="__main__":
+#     train_and_save_model()
