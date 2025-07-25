@@ -19,7 +19,7 @@ def clean_text(text):
     return text
 
 def train_and_save_model(
-        dataset_path: str="IMDB Dataset.csv",
+        dataset_path: str="IMDB_Dataset.csv",
         model_path: str="model.pkl",
         vectorizer_path: str="vectorizer.pkl"
 ):
